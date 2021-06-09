@@ -1,0 +1,62 @@
+---
+title: The Curious Case of Tuftesque Document
+#subtitle: Or how I stop worrying about
+author: Tahir Enes Gedik
+date: '2021-06-08'
+slug: try
+categories: []
+tags: []
+---
+
+> I am too lazy to remove this post. So I keep it here to remind me how to make some tweaks.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(tufte)
+library(ggstatsplot)
+library(ggplot2)
+```
+
+```{r}
+lorem::ipsum(2)
+```
+
+And this is how margin note works.
+
+`r tufte::margin_note("This is a margin **note**.")`
+
+```{r plot, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+df <- carData::Mroz
+p <- ggbetweenstats(df,
+               x=lfp,
+               y=inc) 
+
+# Changing plot background to match the theme
+p + theme(plot.background = element_rect(fill = '#fffff8', colour = '#fffff8'),
+           panel.background = element_rect(fill="#fffff8"))
+```
+
+`r tufte::newthought("And here I am")` with a new thought
+
+  
+  <!-- htmltools::includeHTML() below -->
+    <html>
+      <head>  </head>
+      <body>
+      <div class="epigraph">
+          <blockquote>
+            <p>The English language . . . becomes ugly and inaccurate because our thoughts are foolish, but the slovenliness of our language makes it easier for us to have foolish thoughts.</p>
+            <footer>George Orwell, “Politics and the English Language”</footer>
+          </blockquote>
+          <blockquote>
+            <p>For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.</p>
+            <footer>Richard P. Feynman, <cite>“What Do You Care What Other People Think?”</cite></footer>
+          </blockquote>
+          <blockquote>I do not paint things, I paint only the differences between things.<footer>Henri Matisse, <cite>Henri Matisse Dessins: thèmes et variations</cite> (Paris, 1943), 37</footer></blockquote>
+        </div>
+      </body>
+    </html>
+  <!-- included above -->
+
+
+       
